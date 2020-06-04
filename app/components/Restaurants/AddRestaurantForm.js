@@ -200,7 +200,9 @@ function Map(props) {
         );
       } else {
         //Guardar la localización
-        const loc = await Location.getCurrentPositionAsync({});
+        const loc = await Location.getCurrentPositionAsync({
+          enableHighAccuracy: true,
+        });
         console.log(loc);
         setLocation({
           latitude: loc.coords.latitude,
